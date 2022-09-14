@@ -1,0 +1,26 @@
+---
+export interface Props {
+  icon: string,
+  text?: string,
+}
+
+const { icon, text = 'tooltip  💡' } = Astro.props as Props;
+
+const icons = {
+  "fire": "fa-2x fa-solid fa-fire-flame-curved",
+  "plus": "fa-2x fa-sharp fa-solid fa-plus",
+  "lightning": "fa-2x fa-solid fa-bolt-lightning",
+  "poo": "fa-2x fa-solid fa-poo"
+}
+
+const iconClass = icons[icon] || "fa-2x fa-solid fa-fire-flame-curved";
+---
+
+<div class='sidebar-icon'>
+  <i class={iconClass}></i>
+
+  <span class='sidebar-tooltip'>
+    {text}
+  </span>
+</div>
+
