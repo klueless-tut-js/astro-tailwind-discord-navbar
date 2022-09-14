@@ -1,5 +1,7 @@
 # Astro Starter Kit: Minimal
 
+[Astro/TailwindCSS - Discord Nav Bar - Fireship.io](https://www.youtube.com/watch?v=pfaSUYaSgRo&t=633s)
+
 ```
 npm init astro -- --template minimal
 ```
