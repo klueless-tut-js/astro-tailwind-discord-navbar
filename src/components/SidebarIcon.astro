@@ -4,7 +4,7 @@ export interface Props {
   text?: string,
 }
 
-const { icon, text = 'tooltip  💡' } = Astro.props as Props;
+const { icon, text = 'tooltip 💡' } = Astro.props as Props;
 
 const icons = {
   "fire": "fa-2x fa-solid fa-fire-flame-curved",
@@ -16,10 +16,10 @@ const icons = {
 const iconClass = icons[icon] || "fa-2x fa-solid fa-fire-flame-curved";
 ---
 
-<div class='sidebar-icon'>
+<div class='sidebar-icon group'>
   <i class={iconClass}></i>
 
-  <span class='sidebar-tooltip'>
+  <span class='sidebar-tooltip group-hover:scale-100'>
     {text}
   </span>
 </div>
