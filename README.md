@@ -1,7 +1,7 @@
 # Astro Starter Kit: Minimal
 
-[Astro/TailwindCSS - Discord Nav Bar - Fireship.io](https://www.youtube.com/watch?v=pfaSUYaSgRo&t=633s)
-[Astro/Beautiful Scroll Animations - Beyond Fireship](https://www.youtube.com/watch?v=T33NN_pPeNI)
+- [Astro/TailwindCSS - Discord Nav Bar - Fireship.io](https://www.youtube.com/watch?v=pfaSUYaSgRo&t=633s)
+- [Astro/Beautiful Scroll Animations - Beyond Fireship](https://www.youtube.com/watch?v=T33NN_pPeNI)
 ```
 npm init astro -- --template minimal
 ```
