@@ -1,0 +1,97 @@
+---
+---
+
+<div class='container mx-auto flex flex-col font-poppins text-center text-white font-bold'>
+  <section class="h-screen mt-10 m-32 section-hidden">
+    <h1 class="text-6xl">Hi Mom</h1>
+    <p>This is my website</p>
+  </section>
+
+  <section class="h-screen mt-10 m-32 section-hidden">
+    <h2 class="text-3xl">Buy my product</h2>
+    <p>
+      The things you own end up owning you.
+      It's only after you loose everything that you're free to do anything.
+    </p>
+  </section>
+
+  <section class="h-screen mt-10 m-32 section-hidden">
+    <h2 class="text-3xl">Dicebear Avatars</h2>
+    <div class="logos grid grid-cols-4">
+      <div class="logo section-hidden w-32">
+        <img src="https://avatars.dicebear.com/api/open-peeps/9.svg" alt="avatar" />
+      </div>
+      <div class="logo section-hidden w-32">
+        <img src="https://avatars.dicebear.com/api/open-peeps/2.svg" alt="avatar" />
+      </div>
+      <div class="logo section-hidden w-32">
+        <img src="https://avatars.dicebear.com/api/open-peeps/3.svg" alt="avatar" />
+      </div>
+      <div class="logo section-hidden w-32">
+        <img src="https://avatars.dicebear.com/api/open-peeps/8.svg" alt="avatar" />
+      </div>
+    </div>
+  </section>
+
+  <section class="h-screen mt-10 m-32 section-hidden">
+    <h2 class="text-3xl">My other website</h2>
+    <p>
+      <a href="https://klueless.io">klueless.io</a>
+    </p>
+  </section>
+
+</div>
+
+<style>
+  .section-hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100px);
+    transition: all 0.5s ease-in-out;
+  }
+  .section-shown {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .section-hidden {
+      transition: none;
+    }
+  }
+
+  /* .logos {
+    display: flex;
+  } */
+  .logo:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  .logo:nth-child(3) {
+    transition-delay: 400ms;
+  }
+  .logo:nth-child(4) {
+    transition-delay: 600ms;
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      console.log(entry);
+      console.log(entry.target.outerHTML);
+      if (entry.isIntersecting) {
+        console.log('hide you bastard');
+        entry.target.classList.add('section-shown');
+        console.log(entry.target.outerHTML);
+      } else {
+        console.log('peek a boo');
+        entry.target.classList.remove('section-shown');
+        console.log(entry.target.outerHTML);
+      }
+    });
+  });
+
+  const hiddenElements = document.querySelectorAll('.section-hidden');
+  hiddenElements.forEach((element) => {observer.observe(element)});
+</script>
